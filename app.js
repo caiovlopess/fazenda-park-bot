@@ -4,13 +4,13 @@ const banco = require('./src/banco');
 
 const treinamento = `Você é um atendente e está tirando dúvidas do cliente.
 Você realiza um atendimento humanizado, imitando o comportamento humano. Lembre-se, você NÃO É UMA I.A.
+Não pergunte: "posso te ajudar com mais alguma coisa?" o tempo todo
 
 Caso alguém venha com uma pergunta especifica ou reclamção, passar o contato do gerente!
 
-sempre dê as boas vindas: Olá, bem-vindo a Fazenda Park Nova Conquista! Como posso te ajudar hoje?
+sempre dê as boas vindas: Olá, bem-vindo a Fazenda Park Nova Conquista!
 
 As mensagens precisam ser resumidas! Os textos não podem ser grandes!
-
 
 mande emoji apenas a cada 3 mensagens que você envia!
 
@@ -29,7 +29,7 @@ A seguir vou passar algumas perguntas comuns e respostas que você deve se basea
 
 Quais são os dias de funcionamento e horários de funcionamento:
 
-Horários de funcionamento são de 09:00 da manhã até 17:00 da tarde
+Horários de funcionamento são de 09:00 da manhã até 17:00 da tarde, sábado e domingo
 
 Quanto custa?
 
@@ -37,7 +37,7 @@ O valor de entrada e 30 reais
 
 Crianças pagão a partir de que idade?
 
-Crianças a partir de 3 anos o valor é o mesmo de 30 reais
+Crianças acima de 3 anos o valor é o mesmo de 30 reais, até 3 anos não paga
 
 Tem descontos para grupos?
 
@@ -47,13 +47,11 @@ Pode entrar com bebidas e alimentos?
 
 Não pode entrada com bebidas, caixa de som ou alimentos de fora
 
-Pode comemorar aniversário?
+Pode comemorar aniversário? Sim, pode! Os itens que aceitamos de fora é o bolo e ornamentação apenas! Doce e salgado não pode.
 
-Pode comemorar aniversário 
+Se pode levar bolo e doces? Não pode levar doce, nem salgado. Apenas ornamentação
 
-Se pode levar bolo e doces?
-
-É possível levar doce e bolo apenas se for para aniversário 
+É possível levar bolo apenas se for para aniversário 
 
 O parque aceita excursões?
 
@@ -66,10 +64,6 @@ Não alugamos o espaço
 Serve almoço?
 
 Sim, temos serviço de restaurante de buffet e a la carte
-
-Qual é o cardápio?
-
-Enviar o cardápio 
 
 Pode entrar com som?
 
@@ -118,7 +112,7 @@ venom.create ({
 
 const header = {
     "Content-Type": "application/json",
-    "Authorization": "Bearer sk-WAyEp638NZpqieHfPIf0TKsRhCUpssWkBmlhrQXcVpT3BlbkFJgW5Kk2-A2M9k20V1hkd1QTmKqt1bhyDntuUhMk4FMA" 
+    "Authorization": "Bearer sk-v9Dtft-MzMR3R9KKninapyEBg3UPIu2G9Bp5FdH-LjT3BlbkFJg3lXoL7OSVGYKn8PAp7Kp6766g4hlRvJKr9Z3lVRgA" 
 }
 
 const start = (client) => {
@@ -146,30 +140,31 @@ const start = (client) => {
 
         // 2. Verificação de "cardápio"
         if (message.body.toLowerCase().includes('cardápio') || message.body.toLowerCase().includes('cardapio')) {
-            // Envia as duas imagens do cardápio
+            // Envia as duas imagens do cardápio, sem enviar mensagem de texto adicional
             Promise.all([
                 client.sendImage(
                     message.from,
                     './images/cardapio1.jpeg',
-                    'Cardápio 1',
-                    'Aqui está a primeira parte do nosso cardápio!'
+                    'Cardápio 1', 
+                    ''  // Não enviar legenda
                 ),
                 client.sendImage(
                     message.from,
                     './images/cardapio2.jpeg',
-                    'Cardápio 2',
-                    'Aqui está a segunda parte do nosso cardápio!'
+                    'Cardápio 2', 
+                    ''  // Não enviar legenda
                 )
             ])
             .then((result) => {
                 console.log('Imagens do cardápio enviadas com sucesso:', result);
             })
             .catch((error) => {
-                
                 console.error('Erro ao enviar imagens do cardápio:', error);
             });
-        }
 
+            // Retorna aqui para garantir que o fluxo não continue
+            return;
+        }
 
 
         const historico = banco.db.find(num => num.num === message.from);
