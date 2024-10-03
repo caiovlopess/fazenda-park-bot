@@ -1,0 +1,39 @@
+2024/10/03-10:50:50.111 6208 Reusing MANIFEST C:\Users\jvage\Desktop\Fazenda Park Bot\tokens\chatGPT_BOT\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/10/03-10:50:50.111 6208 Recovering log #832
+2024/10/03-10:50:50.131 6208 Reusing old log C:\Users\jvage\Desktop\Fazenda Park Bot\tokens\chatGPT_BOT\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000832.log 
+2024/10/03-10:50:51.702 41d0 Level-0 table #839: started
+2024/10/03-10:50:51.704 6208 Current memtable full; waiting...
+2024/10/03-10:50:51.736 41d0 Level-0 table #839: 564163 bytes OK
+2024/10/03-10:50:51.737 41d0 Delete type=0 #832
+2024/10/03-10:50:51.738 59e4 Level-0 table #841: started
+2024/10/03-10:50:51.740 59e4 Level-0 table #841: 471 bytes OK
+2024/10/03-10:50:51.741 59e4 Delete type=0 #838
+2024/10/03-10:50:51.741 59e4 Manual compaction at level-0 from ' W\x01\x00\x00\x00' @ 72057594037927935 : 1 .. ' X\x01\x00\x00\x00' @ 0 : 0; will stop at ' W\x01\x00\x00\x05' @ 1728843 : 0
+2024/10/03-10:50:51.742 59e4 Compacting 1@0 + 1@1 files
+2024/10/03-10:50:51.771 59e4 Generated table #842@0: 10481 keys, 215604 bytes
+2024/10/03-10:50:51.771 59e4 Compacted 1@0 + 1@1 files => 215604 bytes
+2024/10/03-10:50:51.771 59e4 compacted to: files[ 0 1 2 0 0 0 0 ]
+2024/10/03-10:50:51.771 59e4 Delete type=2 #839
+2024/10/03-10:50:51.772 59e4 Delete type=2 #841
+2024/10/03-10:50:51.773 59e4 Manual compaction at level-0 from ' V\x01\x00\x00\x00' @ 72057594037927935 : 1 .. ' W\x01\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/10/03-10:50:51.774 59e4 Manual compaction at level-0 from ' W\x01\x00\x00\x05' @ 1728843 : 0 .. ' X\x01\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/10/03-10:50:53.136 6ce8 Compacting 1@1 + 2@2 files
+2024/10/03-10:50:53.276 6ce8 Generated table #843@1: 59975 keys, 2215329 bytes
+2024/10/03-10:50:53.310 6ce8 Generated table #844@1: 26680 keys, 439262 bytes
+2024/10/03-10:50:53.310 6ce8 Compacted 1@1 + 2@2 files => 2654591 bytes
+2024/10/03-10:50:53.310 6ce8 compacted to: files[ 0 0 2 0 0 0 0 ]
+2024/10/03-10:50:53.311 6ce8 Delete type=2 #835
+2024/10/03-10:50:53.311 6ce8 Delete type=2 #836
+2024/10/03-10:50:53.311 6ce8 Delete type=2 #842
+2024/10/03-10:55:54.359 6ce8 Level-0 table #846: started
+2024/10/03-10:55:54.366 6ce8 Level-0 table #846: 297440 bytes OK
+2024/10/03-10:55:54.367 6ce8 Delete type=0 #840
+2024/10/03-10:55:54.368 6208 Manual compaction at level-0 from ' Y\x01\x00\x00\x00' @ 72057594037927935 : 1 .. ' Z\x01\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/10/03-10:55:59.815 6208 Compacting 1@1 + 2@2 files
+2024/10/03-10:55:59.857 6208 Generated table #847@1: 59130 keys, 2215526 bytes
+2024/10/03-10:55:59.877 6208 Generated table #848@1: 28829 keys, 476503 bytes
+2024/10/03-10:55:59.877 6208 Compacted 1@1 + 2@2 files => 2692029 bytes
+2024/10/03-10:55:59.878 6208 compacted to: files[ 0 0 2 0 0 0 0 ]
+2024/10/03-10:55:59.878 6208 Delete type=2 #843
+2024/10/03-10:55:59.878 6208 Delete type=2 #844
+2024/10/03-10:55:59.878 6208 Delete type=2 #846
