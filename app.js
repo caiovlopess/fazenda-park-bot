@@ -104,15 +104,14 @@ Ainda não temos planos, fique por dentro que em breve vamos ter novidades!
 
 venom.create ({
     session: "chatGPT_BOT",
-    multidevice: true
-
+    multidevice: true,
 })
 .then((client) => start(client))
 .catch((err) => console.log(err));
 
 const header = {
     "Content-Type": "application/json",
-    "Authorization": "Bearer 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" 
+    "Authorization": "Bearer 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" 
 }
 
 const start = (client) => {
