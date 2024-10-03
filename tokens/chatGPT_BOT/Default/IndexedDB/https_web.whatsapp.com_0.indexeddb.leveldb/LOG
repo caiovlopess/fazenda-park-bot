@@ -1,17 +1,16 @@
-2024/10/03-13:54:11.333 7eac Reusing MANIFEST C:\Users\jvage\Desktop\Fazenda Park Bot\tokens\chatGPT_BOT\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/10/03-13:54:11.334 7eac Recovering log #925
-2024/10/03-13:54:11.339 7eac Reusing old log C:\Users\jvage\Desktop\Fazenda Park Bot\tokens\chatGPT_BOT\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000925.log 
-2024/10/03-13:54:11.339 7eac Delete type=2 #922
-2024/10/03-13:54:11.339 7eac Delete type=2 #923
-2024/10/03-13:54:12.632 7600 Level-0 table #931: started
-2024/10/03-13:54:12.636 7600 Level-0 table #931: 245700 bytes OK
-2024/10/03-13:54:12.637 7600 Delete type=0 #925
-2024/10/03-13:54:12.637 7600 Manual compaction at level-0 from '\x00 \x00\x00\x00' @ 72057594037927935 : 1 .. '\x00!\x00\x00\x00' @ 0 : 0; will stop at (end)
-2024/10/03-13:54:12.638 7600 Manual compaction at level-1 from '\x00 \x00\x00\x00' @ 72057594037927935 : 1 .. '\x00!\x00\x00\x00' @ 0 : 0; will stop at '\x00 \x00\x00\x05' @ 2174727 : 1
-2024/10/03-13:54:12.638 7600 Compacting 1@1 + 2@2 files
-2024/10/03-13:54:12.672 7600 Generated table #932@1: 48250 keys, 2201467 bytes
-2024/10/03-13:54:12.709 7600 Generated table #933@1: 59487 keys, 1179010 bytes
-2024/10/03-13:54:12.709 7600 Compacted 1@1 + 2@2 files => 3380477 bytes
-2024/10/03-13:54:12.709 7600 compacted to: files[ 0 0 2 0 0 0 0 ]
-2024/10/03-13:54:12.710 7600 Delete type=2 #931
-2024/10/03-13:54:12.710 7eac Manual compaction at level-1 from '\x00 \x00\x00\x05' @ 2174727 : 1 .. '\x00!\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/10/03-16:14:21.835 3c10 Reusing MANIFEST C:\Users\jvage\Desktop\Fazenda Park Bot\tokens\chatGPT_BOT\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/10/03-16:14:21.836 3c10 Recovering log #992
+2024/10/03-16:14:21.857 3c10 Reusing old log C:\Users\jvage\Desktop\Fazenda Park Bot\tokens\chatGPT_BOT\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000992.log 
+2024/10/03-16:14:23.286 53a4 Level-0 table #997: started
+2024/10/03-16:14:23.299 53a4 Level-0 table #997: 403764 bytes OK
+2024/10/03-16:14:23.300 53a4 Delete type=0 #992
+2024/10/03-16:14:23.301 3b84 Manual compaction at level-0 from '\x007\x00\x00\x00' @ 72057594037927935 : 1 .. '\x008\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/10/03-16:14:23.301 3b84 Manual compaction at level-0 from '\x006\x00\x00\x00' @ 72057594037927935 : 1 .. '\x007\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/10/03-16:14:23.302 3b84 Manual compaction at level-1 from '\x007\x00\x00\x00' @ 72057594037927935 : 1 .. '\x008\x00\x00\x00' @ 0 : 0; will stop at '\x007\x00\x00\x05' @ 2527055 : 1
+2024/10/03-16:14:23.302 3b84 Compacting 1@1 + 1@2 files
+2024/10/03-16:14:23.367 3b84 Generated table #998@1: 59148 keys, 2013410 bytes
+2024/10/03-16:14:23.367 3b84 Compacted 1@1 + 1@2 files => 2013410 bytes
+2024/10/03-16:14:23.367 3b84 compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/10/03-16:14:23.368 3b84 Delete type=2 #997
+2024/10/03-16:14:23.369 3b84 Manual compaction at level-1 from '\x006\x00\x00\x00' @ 72057594037927935 : 1 .. '\x007\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/10/03-16:14:23.369 3b84 Manual compaction at level-1 from '\x007\x00\x00\x05' @ 2527055 : 1 .. '\x008\x00\x00\x00' @ 0 : 0; will stop at (end)
