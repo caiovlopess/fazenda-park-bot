@@ -175,7 +175,7 @@ const start = (client) => {
 
         console.log(banco.db);
         axios.post("https://api.openai.com/v1/chat/completions", {
-            "model": "text-ada-001",
+            "model": "gpt-3.5-turbo",
             "messages": [
 
                 {"role": "system", "content": treinamento},
