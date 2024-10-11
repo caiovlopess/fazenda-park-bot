@@ -102,6 +102,9 @@ Ainda não temos planos, fique por dentro que em breve vamos ter novidades!
 `
 
 
+let dailyTokenLimit = 444444; // Limite diário de tokens
+let usedTokensToday = 0; // Contagem de tokens usados hoje
+
 venom.create ({
     session: "chatGPT_BOT",
     multidevice: true,
@@ -111,7 +114,7 @@ venom.create ({
 
 const header = {
     "Content-Type": "application/json",
-    "Authorization": "Bearer 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" 
+    "Authorization": "Bearer sk-svcacct-VvxhQuKPHNXet7wg6H5IFYsZrd6f6GwtyVvHc1bEGqdQAtG1cd05snKmgwJlKeTT3BlbkFJOSvfjJ-mzXQqWsoVEIMNcM4bEaaPqNpTTBG5DmQLhsV3lRQW1fih6iqcnK-PsAA" 
 }
 
 const start = (client) => {
@@ -172,19 +175,17 @@ const start = (client) => {
 
         console.log(banco.db);
         axios.post("https://api.openai.com/v1/chat/completions", {
-            "model": "gpt-3.5-turbo",
-            "prompt": `historico de conversas: ${historico.historico}\nUsuário: ${message.body}\nAssistente:`,
-            "max_tokens": 100,  // Limite de tokens por resposta. Ajuste conforme necessário.
-            "temperature": 0.4  // Controle da criatividade da resposta, ajuste conforme a sua necessidade.
-        },{
+            "model": "text-ada-001",
             "messages": [
 
                 {"role": "system", "content": treinamento},
                 {"role": "system", "content": "historico de conversas: " + historico.historico},
                 {"role": "user", "content": message.body}
             
-            ]
+            ],
 
+            "max_tokens": 100 
+            
            }, {
               headers: header
             })
