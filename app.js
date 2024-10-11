@@ -113,7 +113,7 @@ venom.create ({
 
 const header = {
     "Content-Type": "application/json",
-    "Authorization": "Bearer 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" 
+    "Authorization": "Bearer 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" 
 }
 
 const start = (client) => {
