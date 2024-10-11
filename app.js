@@ -172,10 +172,10 @@ const start = (client) => {
 
         console.log(banco.db);
         axios.post("https://api.openai.com/v1/chat/completions", {
-            "model": "text-ada-001",
+            "model": "gpt-3.5-turbo",
             "prompt": `historico de conversas: ${historico.historico}\nUsuário: ${message.body}\nAssistente:`,
             "max_tokens": 100,  // Limite de tokens por resposta. Ajuste conforme necessário.
-            "temperature": 0.7  // Controle da criatividade da resposta, ajuste conforme a sua necessidade.
+            "temperature": 0.4  // Controle da criatividade da resposta, ajuste conforme a sua necessidade.
         },{
             "messages": [
 
