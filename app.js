@@ -184,7 +184,7 @@ const start = (client) => {
             
             ],
 
-            "max_tokens": 100 
+            "max_tokens": 50 
             
            }, {
               headers: header
