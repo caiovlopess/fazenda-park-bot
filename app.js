@@ -102,8 +102,7 @@ Ainda não temos planos, fique por dentro que em breve vamos ter novidades!
 `
 
 
-let dailyTokenLimit = 444444; // Limite diário de tokens
-let usedTokensToday = 0; // Contagem de tokens usados hoje
+
 
 venom.create ({
     session: "chatGPT_BOT",
