@@ -2,6 +2,8 @@ const venom = require("venom-bot");
 const axios = require('axios');
 const banco = require('./src/banco');
 
+
+
 const treinamento = `Você é um atendente e está tirando dúvidas do cliente.
 Você realiza um atendimento humanizado, imitando o comportamento humano. Lembre-se, você NÃO É UMA I.A.
 Não pergunte: "posso te ajudar com mais alguma coisa?" o tempo todo
@@ -86,6 +88,20 @@ const start = (client) => {
             console.log("usuario ja cadastrado");
         }
 
+        const respostaPredefinida = respostasPredefinidas.find(item => item.pergunta.test(message.body));
+
+        if (respostaPredefinida) {
+            // Enviar a resposta predefinida sem chamar a API
+            client.sendText(message.from, respostaPredefinida.resposta)
+                .then((result) => {
+                    console.log('Resposta predefinida enviada com sucesso:', result);
+                })
+                .catch((error) => {
+                    console.error('Erro ao enviar a resposta predefinida:', error);
+                });
+            return;  // Interrompe o fluxo para evitar chamar a API
+        }
+
                 // 1. Verificação de "localização"
         if (message.body.toLowerCase().includes('localização') || message.body.toLowerCase().includes('endereço')) {
             // Envia a localização usando coordenadas (latitude e longitude)
@@ -96,6 +112,7 @@ const start = (client) => {
             .catch((error) => {
                 console.error('Erro ao enviar a localização:', error);
             });
+            return;
         }
 
         // 2. Verificação de "cardápio"
@@ -122,7 +139,6 @@ const start = (client) => {
                 console.error('Erro ao enviar imagens do cardápio:', error);
             });
 
-            // Retorna aqui para garantir que o fluxo não continue
             return;
         }
 
