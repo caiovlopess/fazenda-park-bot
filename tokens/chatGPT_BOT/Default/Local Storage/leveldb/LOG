@@ -1,5 +1,3 @@
-2024/10/03-20:18:06.635 53a4 Reusing MANIFEST C:\Users\jvage\Desktop\Fazenda Park Bot\tokens\chatGPT_BOT\Default\Local Storage\leveldb/MANIFEST-000001
-2024/10/03-20:18:06.641 53a4 Recovering log #4
-2024/10/03-20:18:06.642 53a4 Level-0 table #6: started
-2024/10/03-20:18:06.643 53a4 Level-0 table #6: 16005 bytes OK
-2024/10/03-20:18:06.645 53a4 Delete type=0 #4
+2024/10/22-08:56:24.594 45bc Reusing MANIFEST C:\Users\caioi\Documents\Fazenda Bot\fazenda-park-bot\tokens\chatGPT_BOT\Default\Local Storage\leveldb/MANIFEST-000001
+2024/10/22-08:56:24.595 45bc Recovering log #3
+2024/10/22-08:56:24.595 45bc Reusing old log C:\Users\caioi\Documents\Fazenda Bot\fazenda-park-bot\tokens\chatGPT_BOT\Default\Local Storage\leveldb/000003.log 

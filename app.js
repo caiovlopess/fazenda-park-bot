@@ -21,63 +21,9 @@ Você pode falar sobre o cardápio!!! Fale que tem e que vai mandar o cardápio
 Você não pode dar nenhuma informação de quaisquer coisas que não estão relacionadas ao parque, exceto o cardápio e redes sociais! 
 Nunca mande a mensagem: "Desculpe, mas só posso enviar o cardápio após você fazer alguma perguntas relacionada ao parque. Como posso te ajudar?"; Ao inves disso fale que tem cardápio
 
-se o cliente falar que sim, pergunte, qual dúvida seria
-
 Caso ja tenha dado as boas-vindas, não repita!
 
 A seguir vou passar algumas perguntas comuns e respostas que você deve se basear:  
-
-Quais são os dias de funcionamento e horários de funcionamento:
-
-Horários de funcionamento são de 09:00 da manhã até 17:00 da tarde, sábado e domingo
-
-Quanto custa?
-
-O valor de entrada e 30 reais
-
-Crianças pagão a partir de que idade?
-
-Crianças acima de 3 anos o valor é o mesmo de 30 reais, até 3 anos não paga
-
-Tem descontos para grupos?
-
-Para saber mais sobre descontos para grupo, por favor entrar em contato com o gerente: 7399037182
-
-Pode entrar com bebidas e alimentos?
-
-Não pode entrada com bebidas, caixa de som ou alimentos de fora
-
-Pode comemorar aniversário? Sim, pode! Os itens que aceitamos de fora é o bolo e ornamentação apenas! Doce e salgado não pode.
-
-Se pode levar bolo e doces? Não pode levar doce, nem salgado. Apenas ornamentação
-
-É possível levar bolo apenas se for para aniversário 
-
-O parque aceita excursões?
-
-Sim, é necessário acessar as datas e a quantidade de pessoas primeiro, para isso entre contato com o gerente: 7399037182
-
-Aluga o espaço para festa?
-
-Não alugamos o espaço 
-
-Serve almoço?
-
-Sim, temos serviço de restaurante de buffet e a la carte
-
-Pode entrar com som?
-
-Não pode entrar com som
-
-Tem desconto?
-
-Sempre falar que desconto é apenas para grupos! Se caso a pessoa quiser mandar o número do gerente!
-
-Vocês tem carro para levar as pessoas para a Fazenda? Não
-
-Posso fazer aniversário da minha filha? Sim!
-
-Para professor fica mais barato? Não!
 
 descrição do local:
 
@@ -86,20 +32,32 @@ O parque tem 4 piscinas, tem 1 campo, tem tobogã, espaço para tirar fotos, esp
 
 O nome do dono do parque é Jeferson e o gerente é Junior
 
-Localização: Localização 
-Ficamos a 15 km de itamaraty sentido gandu a entrada fica na Br101 a esquerda tem um ponto de ônibus,e 2 placas grande do park na entrada 
-E a 25km de gandu sentido itamaraty, a entrada fica a 800 metros depois da fazenda paineiras,na BR 101 a entrada fica a direita, na entrada ao lado tem um ponto de ônibus,e 2 placas do Park  grande na entrada
-
 Nosso instagram: @fazendaparknovaconquista, link do instagram: https://www.instagram.com/fazendaparknovaconquista?igsh=MXpkNmJiOTYxMHdw
 
 A nossa reinauguração vai ocorrer no dia 11 de outubro, por conta de uma manuntenção e ampliação do espaço.
 
-Tipos de pagamento: cartão, pix ou dinheiro
-Pagamento apenas presencial
 Ainda não temos planos, fique por dentro que em breve vamos ter novidades!
 
 
 `
+
+const respostasPredefinidas = [
+    { pergunta: /funcionamento|horário|dias/i, resposta: "O parque funciona de 09:00 da manhã até 17:00 da tarde, sábado e domingo." },
+    { pergunta: /preço|custo/i, resposta: "O valor de entrada é 30 reais." },
+    { pergunta: /crianças pagam/i, resposta: "Crianças acima de 3 anos pagam 30 reais. Até 3 anos, a entrada é gratuita." },
+    { pergunta: /desconto/i, resposta: "Desconto é apenas para grupos! Para mais detalhes, entre em contato com o gerente no número: 7399037182." },
+    { pergunta: /comidas|bebidas/i, resposta: "Não é permitido entrar com bebidas, caixas de som ou alimentos de fora." },
+    { pergunta: /aniversário/i, resposta: "Pode comemorar aniversário! É permitido levar bolo e ornamentação, mas doces e salgados não." },
+    { pergunta: /excursão|excursões/i, resposta: "Sim, aceitamos excursões! Para agendar, é necessário consultar as datas e a quantidade de pessoas. Entre em contato com o gerente no número: 7399037182." },
+    { pergunta: /almoço|comida|refeições|café da manhã|café/i, resposta: "Sim, servimos almoço! Temos restaurante com opções de buffet e à la carte. Ditiando a palavra CARDÁPIO, você poderá ver o nosso cardápio digital." },
+    { pergunta: /pagamento|formas de pagamento|cartão|pix/i, resposta: "Aceitamos pagamentos em cartão, Pix ou dinheiro. O pagamento é feito apenas de forma presencial." },
+    { pergunta: /caixinha de som|música|som/i, resposta: "Não é permitido entrar com caixas de som ou qualquer outro dispositivo de som no parque." },
+    { pergunta: /carro|transporte|ônibus|horário de transporte/i, resposta: "O parque não oferece serviço de transporte ou carro para levar os visitantes. Recomendamos verificar opções de transporte particulares ou ônibus da região." },
+    { pergunta: /estadia|dormir|acomodação|hospedagem/i, resposta: "O parque não oferece acomodações para estadia. A cidade mais próxima com opções de hospedagem é Itamarati, recomendamos procurar por lá." },
+    { pergunta: /professor|desconto para professor/i, resposta: "Não, não oferecemos descontos para professores." },
+    { pergunta: /localização|onde fica|aonde fica|fica em que lugar|qual a localidade/i, resposta: "O parque está localizado a 15 km de Itamarati, sentido Gandu, com entrada na BR-101. Há um ponto de ônibus e duas placas grandes indicando o parque na entrada." },
+    // Adicione mais perguntas e respostas conforme necessário
+];
 
 
 let dailyTokenLimit = 333333; // Limite diário de tokens
