@@ -62,6 +62,21 @@ const respostasPredefinidas = [
 ];
 
 
+const verificarRespostaPredefinida = (mensagem) => {
+    // Transforma a mensagem para minúsculas para facilitar a comparação
+    const mensagemMin = mensagem.toLowerCase();
+
+    // Percorre a lista de respostas predefinidas
+    for (const item of respostasPredefinidas) {
+        // Verifica se qualquer palavra-chave está presente na mensagem
+        if (item.pergunta.test(mensagemMin)) {
+            return item.resposta;
+        }
+    }
+    // Caso não encontre nenhuma palavra-chave, retorna null ou uma resposta padrão
+    return null;
+};
+
 let dailyTokenLimit = 333333; // Limite diário de tokens
 let usedTokensToday = 0; // Contagem de tokens usados hoje
 
