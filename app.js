@@ -111,16 +111,6 @@ const verificarRespostaPredefinida = (mensagem) => {
 };
 
 
-    // Percorre a lista de respostas predefinidas
-    for (const item of respostasPredefinidas) {
-        if (item.pergunta.test(mensagemMin)) {
-            return item.resposta;  // Retorna a primeira correspondência encontrada
-        }
-    }
-
-    return null;  // Retorna null se nenhuma correspondência for encontrada
-
-
 let dailyTokenLimit = 333333; // Limite diário de tokens
 let usedTokensToday = 0; // Contagem de tokens usados hoje
 
