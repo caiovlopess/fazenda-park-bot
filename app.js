@@ -44,37 +44,37 @@ Ainda não temos planos, fique por dentro que em breve vamos ter novidades!
 `
 
 const respostasPredefinidas = [
+    { pergunta: /oi|ola|bom dia|boa tarde|boa noite|opa|olá/i, resposta: "Olá, bem-vindo a Fazenda Park Nova Conquista! Como posso te ajudar hoje? 😊" },
     { pergunta: /funcionamento|horário|dias/i, resposta: "O parque funciona de 09:00 da manhã até 17:00 da tarde, sábado e domingo." },
-    { pergunta: /preço|custo/i, resposta: "O valor de entrada é 30 reais." },
+    { pergunta: /vitória da conquista|/i, resposta: "Olá! O parque fica a 4h e 38 min da cidade de Vitória da Conquista. Estamos localizados a 15 km de Itamaraty, sentido Gandu, na BR 101. A entrada fica à esquerda, tem um ponto de ônibus e 2 placas grandes do parque na entrada. Posso ajudar em mais alguma coisa?" },
+    { pergunta: /preço|valor|entrada|custa/i, resposta: "Pagando a entrada de 30 reais você tem acesso a todas as piscinas, campo, tobogã, espaço para fotos, espaço com animais, parquinho para crianças, e muito mais! 🏊‍♂️🌳" },
     { pergunta: /crianças pagam/i, resposta: "Crianças acima de 3 anos pagam 30 reais. Até 3 anos, a entrada é gratuita." },
     { pergunta: /desconto/i, resposta: "Desconto é apenas para grupos! Para mais detalhes, entre em contato com o gerente no número: 7399037182." },
     { pergunta: /comidas|bebidas/i, resposta: "Não é permitido entrar com bebidas, caixas de som ou alimentos de fora." },
     { pergunta: /aniversário/i, resposta: "Pode comemorar aniversário! É permitido levar bolo e ornamentação, mas doces e salgados não." },
     { pergunta: /excursão|excursões/i, resposta: "Sim, aceitamos excursões! Para agendar, é necessário consultar as datas e a quantidade de pessoas. Entre em contato com o gerente no número: 7399037182." },
-    { pergunta: /almoço|comida|refeições|café da manhã|café/i, resposta: "Sim, servimos almoço! Temos restaurante com opções de buffet e à la carte. Ditiando a palavra CARDÁPIO, você poderá ver o nosso cardápio digital." },
+    { pergunta: /almoço|comida|refeições|café da manhã|café/i, resposta: "Temos restaurante com opções de buffet e à la carte. Ditiando a palavra CARDÁPIO, você poderá ver o nosso cardápio digital." },
     { pergunta: /pagamento|formas de pagamento|cartão|pix/i, resposta: "Aceitamos pagamentos em cartão, Pix ou dinheiro. O pagamento é feito apenas de forma presencial." },
     { pergunta: /caixinha de som|música|som/i, resposta: "Não é permitido entrar com caixas de som ou qualquer outro dispositivo de som no parque." },
     { pergunta: /carro|transporte|ônibus|horário de transporte/i, resposta: "O parque não oferece serviço de transporte ou carro para levar os visitantes. Recomendamos verificar opções de transporte particulares ou ônibus da região." },
     { pergunta: /estadia|dormir|acomodação|hospedagem/i, resposta: "O parque não oferece acomodações para estadia. A cidade mais próxima com opções de hospedagem é Itamarati, recomendamos procurar por lá." },
     { pergunta: /professor|desconto para professor/i, resposta: "Não, não oferecemos descontos para professores." },
-    { pergunta: /localização|onde fica|aonde fica|fica em que lugar|qual a localidade/i, resposta: "O parque está localizado a 15 km de Itamarati, sentido Gandu, com entrada na BR-101. Há um ponto de ônibus e duas placas grandes indicando o parque na entrada." },
+    { pergunta: /localização|onde fica|aonde fica|fica em que lugar|qual a localidade/i, resposta: "Olá! Estamos localizados a 15 km de Itamaraty, sentido Gandu, na BR 101. A entrada fica à esquerda, tem um ponto de ônibus e 2 placas grandes do parque na entrada. Também estamos a 25 km de Gandu, sentido Itamaraty. A entrada fica a 800 metros depois da Fazenda Paineiras, na BR 101, à direita, com as mesmas 2 placas do parque. Você tem mais alguma dúvida? 😊" },
     // Adicione mais perguntas e respostas conforme necessário
 ];
 
 
 const verificarRespostaPredefinida = (mensagem) => {
-    // Transforma a mensagem para minúsculas para facilitar a comparação
     const mensagemMin = mensagem.toLowerCase();
 
     // Percorre a lista de respostas predefinidas
     for (const item of respostasPredefinidas) {
-        // Verifica se qualquer palavra-chave está presente na mensagem
         if (item.pergunta.test(mensagemMin)) {
-            return item.resposta;
+            return item.resposta;  // Retorna a primeira correspondência encontrada
         }
     }
-    // Caso não encontre nenhuma palavra-chave, retorna null ou uma resposta padrão
-    return null;
+
+    return null;  // Retorna null se nenhuma correspondência for encontrada
 };
 
 let dailyTokenLimit = 333333; // Limite diário de tokens
@@ -103,19 +103,18 @@ const start = (client) => {
             console.log("usuario ja cadastrado");
         }
 
-        const respostaPredefinida = respostasPredefinidas.find(item => item.pergunta.test(message.body));
-
-        if (respostaPredefinida) {
-            // Enviar a resposta predefinida sem chamar a API
-            client.sendText(message.from, respostaPredefinida.resposta)
-                .then((result) => {
-                    console.log('Resposta predefinida enviada com sucesso:', result);
-                })
-                .catch((error) => {
-                    console.error('Erro ao enviar a resposta predefinida:', error);
-                });
-            return;  // Interrompe o fluxo para evitar chamar a API
-        }
+        const respostaPredefinida = verificarRespostaPredefinida(message.body);
+if (respostaPredefinida) {
+    console.log('Enviando resposta predefinida:', respostaPredefinida);
+    client.sendText(message.from, respostaPredefinida)
+        .then((result) => {
+            console.log('Resposta predefinida enviada com sucesso:', result);
+        })
+        .catch((error) => {
+            console.error('Erro ao enviar a resposta predefinida:', error);
+        });
+    return;  // Interrompe o fluxo para evitar chamar a API
+}
 
                 // 1. Verificação de "localização"
         if (message.body.toLowerCase().includes('localização') || message.body.toLowerCase().includes('endereço')) {
