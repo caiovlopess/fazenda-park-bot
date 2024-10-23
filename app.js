@@ -1,6 +1,7 @@
 const venom = require("venom-bot");
 const axios = require('axios');
 const banco = require('./src/banco');
+const { parse, isWeekend } = require('date-fns');
 
 
 
@@ -49,7 +50,8 @@ const respostasPredefinidas = [
     { pergunta: /vitória|da conquista|vitoria da conquista|de conquista/i, resposta: "Olá! O parque fica a 4h e 38 min da cidade de Vitória da Conquista. Estamos localizados a 15 km de Itamaraty, sentido Gandu, na BR 101. A entrada fica à esquerda, tem um ponto de ônibus e 2 placas grandes do parque na entrada. Posso ajudar em mais alguma coisa?" },
     { pergunta: /preço|valor|entrada|custa/i, resposta: "Pagando a entrada de 30 reais você tem acesso a todas as piscinas, campo, tobogã, espaço para fotos, espaço com animais, parquinho para crianças, e muito mais! 🏊‍♂️🌳" },
     { pergunta: /crianças pagam/i, resposta: "Crianças acima de 3 anos pagam 30 reais. Até 3 anos, a entrada é gratuita." },
-    { pergunta: /desconto/i, resposta: "Desconto é apenas para grupos! Para mais detalhes, entre em contato com o gerente no número: 7399037182." },
+    { pergunta: /obrigado|obrigada/i, resposta: "Agradecemos por utilizar nossos serviços! Esperamos por você em breve!" },
+    { pergunta: /desconto|grupos|grupo/i, resposta: "Desconto é apenas para grupos! Para mais detalhes, entre em contato com o gerente no número: 7399037182." },
     { pergunta: /comidas|bebidas/i, resposta: "Não é permitido entrar com bebidas, caixas de som ou alimentos de fora." },
     { pergunta: /aniversário/i, resposta: "Pode comemorar aniversário! É permitido levar bolo e ornamentação, mas doces e salgados não." },
     { pergunta: /excursão|excursões/i, resposta: "Sim, aceitamos excursões! Para agendar, é necessário consultar as datas e a quantidade de pessoas. Entre em contato com o gerente no número: 7399037182." },
@@ -63,9 +65,40 @@ const respostasPredefinidas = [
     // Adicione mais perguntas e respostas conforme necessário
 ];
 
+const verificarDataFinalDeSemana = (mensagem) => {
+    const regexData = /\b(\d{1,2})\s+de\s+(janeiro|fevereiro|março|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro)\b/i;
+    const meses = {
+        janeiro: 0, fevereiro: 1, março: 2, abril: 3, maio: 4, junho: 5,
+        julho: 6, agosto: 7, setembro: 8, outubro: 9, novembro: 10, dezembro: 11
+    };
+
+    const match = mensagem.match(regexData);
+
+    if (match) {
+        const dia = parseInt(match[1]);
+        const mes = meses[match[2].toLowerCase()];
+        const anoAtual = new Date().getFullYear();
+
+        // Converte a data da mensagem em um objeto Date
+        const data = new Date(anoAtual, mes, dia);
+
+        // Verifica se a data é um final de semana (sábado ou domingo)
+        if (isWeekend(data)) {
+            return 'O parque vai abrir nessa data, pois cai em um final de semana! 😊';
+        } else {
+            return 'O parque não abre durante a semana. Estamos abertos apenas aos sábados e domingos.';
+        }
+    }
+    
+    return null;
+};
+
 
 const verificarRespostaPredefinida = (mensagem) => {
     const mensagemMin = mensagem.toLowerCase();
+
+    const respostaData = verificarDataFinalDeSemana(mensagem);
+    if (respostaData) return respostaData;
 
     // Percorre a lista de respostas predefinidas
     for (const item of respostasPredefinidas) {
@@ -76,6 +109,17 @@ const verificarRespostaPredefinida = (mensagem) => {
 
     return null;  // Retorna null se nenhuma correspondência for encontrada
 };
+
+
+    // Percorre a lista de respostas predefinidas
+    for (const item of respostasPredefinidas) {
+        if (item.pergunta.test(mensagemMin)) {
+            return item.resposta;  // Retorna a primeira correspondência encontrada
+        }
+    }
+
+    return null;  // Retorna null se nenhuma correspondência for encontrada
+
 
 let dailyTokenLimit = 333333; // Limite diário de tokens
 let usedTokensToday = 0; // Contagem de tokens usados hoje
