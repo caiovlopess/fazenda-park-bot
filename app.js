@@ -46,22 +46,24 @@ Ainda não temos planos, fique por dentro que em breve vamos ter novidades!
 
 const respostasPredefinidas = [
     { pergunta: /oi|ola|bom dia|boa tarde|boa noite|opa|olá/i, resposta: "Olá, bem-vindo a Fazenda Park Nova Conquista! Como posso te ajudar hoje? 😊" },
-    { pergunta: /funcionamento|horário|dias/i, resposta: "O parque funciona de 09:00 da manhã até 17:00 da tarde, sábado e domingo." },
+    { pergunta: /funcionamento|horário|dias/i, resposta: "O parque funciona de 09:00 da manhã até 17:00 da tarde, apenas sábado e domingo." },
+    { pergunta: /segunda|sabado|sábado|domingo|horas|hora/i, resposta: "O parque funciona de 09:00 da manhã até 17:00 da tarde, apenas sábado e domingo." },
     { pergunta: /vitória|da conquista|vitoria da conquista|de conquista/i, resposta: "Olá! O parque fica a 4h e 38 min da cidade de Vitória da Conquista. Estamos localizados a 15 km de Itamaraty, sentido Gandu, na BR 101. A entrada fica à esquerda, tem um ponto de ônibus e 2 placas grandes do parque na entrada. Posso ajudar em mais alguma coisa?" },
-    { pergunta: /preço|valor|entrada|custa/i, resposta: "Pagando a entrada de 30 reais você tem acesso a todas as piscinas, campo, tobogã, espaço para fotos, espaço com animais, parquinho para crianças, e muito mais! 🏊‍♂️🌳" },
-    { pergunta: /crianças pagam/i, resposta: "Crianças acima de 3 anos pagam 30 reais. Até 3 anos, a entrada é gratuita." },
-    { pergunta: /obrigado|obrigada/i, resposta: "Agradecemos por utilizar nossos serviços! Esperamos por você em breve!" },
-    { pergunta: /desconto|grupos|grupo/i, resposta: "Desconto é apenas para grupos! Para mais detalhes, entre em contato com o gerente no número: 7399037182." },
+    { pergunta: /preço|valor|entrada|custa/i, resposta: "Pagando a entrada de 30 reais você tem acesso a todas as piscinas, campo, tobogã, espaço para fotos, espaço com animais, parquinho para crianças, e muito mais! Obs: Crianças até 3 anos não pagam!" },
+    { pergunta: /crianças pagam|criança|crianças/i, resposta: "Crianças acima de 3 anos pagam 30 reais. Até 3 anos, a entrada é gratuita." },
+    { pergunta: /autista|autistas/i, resposta: "Atualmente, não oferecemos descontos para autistas. Agradecemos a compreensão. Posso ajudar em mais alguma dúvida?" },
+    { pergunta: /obrigado|obrigada|obg/i, resposta: "Agradecemos por utilizar nossos serviços! Esperamos por você em breve!" },
+    { pergunta: /desconto|grupos|grupo/i, resposta: "Desconto é somente para grupos! Para mais detalhes, entre em contato com o gerente no número: 7399037182." },
     { pergunta: /comidas|bebidas/i, resposta: "Não é permitido entrar com bebidas, caixas de som ou alimentos de fora." },
     { pergunta: /aniversário/i, resposta: "Pode comemorar aniversário! É permitido levar bolo e ornamentação, mas doces e salgados não." },
     { pergunta: /excursão|excursões/i, resposta: "Sim, aceitamos excursões! Para agendar, é necessário consultar as datas e a quantidade de pessoas. Entre em contato com o gerente no número: 7399037182." },
-    { pergunta: /almoço|comida|refeições|café da manhã|café/i, resposta: "Temos restaurante com opções de buffet e à la carte. Digitando a palavra CARDÁPIO, você poderá ver o nosso cardápio digital." },
+    { pergunta: /almoço|comida|refeições|café da manhã|café|alimentos|alimento|alimentação/i, resposta: "Temos restaurante com opções de buffet e à la carte. Digitando a palavra CARDÁPIO, você poderá ver o nosso cardápio digital. Lembrando que não é permitido a entrada de alimentos ou bebidas de fora" },
     { pergunta: /pagamento|formas de pagamento|cartão|pix/i, resposta: "Aceitamos pagamentos em cartão, Pix ou dinheiro. O pagamento é feito apenas de forma presencial." },
     { pergunta: /caixinha de som|música|som/i, resposta: "Não é permitido entrar com caixas de som ou qualquer outro dispositivo de som no parque." },
     { pergunta: /carro|transporte|ônibus|horário de transporte/i, resposta: "O parque não oferece serviço de transporte ou carro para levar os visitantes. Recomendamos verificar opções de transporte particulares ou ônibus da região." },
     { pergunta: /estadia|dormir|acomodação|hospedagem/i, resposta: "O parque não oferece acomodações para estadia. A cidade mais próxima com opções de hospedagem é Itamarati, recomendamos procurar por lá." },
     { pergunta: /professor|desconto para professor/i, resposta: "Não, não oferecemos descontos para professores." },
-    { pergunta: /localização|onde fica|aonde fica|fica em que lugar|qual a localidade/i, resposta: "Olá! Estamos localizados a 15 km de Itamaraty, sentido Gandu, na BR 101. A entrada fica à esquerda, tem um ponto de ônibus e 2 placas grandes do parque na entrada. Também estamos a 25 km de Gandu, sentido Itamaraty. A entrada fica a 800 metros depois da Fazenda Paineiras, na BR 101, à direita, com as mesmas 2 placas do parque. Você tem mais alguma dúvida? 😊" },
+    { pergunta: /localização|onde fica|aonde fica|fica em que lugar|onde|aonde|qual a localidade|localidade|local/i, resposta: "Olá! Estamos localizados a 15 km de Itamaraty, sentido Gandu, na BR 101. A entrada fica à esquerda, tem um ponto de ônibus e 2 placas grandes do parque na entrada. Também estamos a 25 km de Gandu, sentido Itamaraty. A entrada fica a 800 metros depois da Fazenda Paineiras, na BR 101, à direita, com as mesmas 2 placas do parque. Você tem mais alguma dúvida? 😊" },
     // Adicione mais perguntas e respostas conforme necessário
 ];
 
@@ -96,15 +98,21 @@ const verificarDataFinalDeSemana = (mensagem) => {
 
 const verificarRespostaPredefinida = (mensagem) => {
     const mensagemMin = mensagem.toLowerCase();
+    const respostasEncontradas = [];
 
     const respostaData = verificarDataFinalDeSemana(mensagem);
-    if (respostaData) return respostaData;
+    if (respostaData) respostasEncontradas.push(respostaData);
 
     // Percorre a lista de respostas predefinidas
     for (const item of respostasPredefinidas) {
         if (item.pergunta.test(mensagemMin)) {
-            return item.resposta;  // Retorna a primeira correspondência encontrada
+            respostasEncontradas.push(item.resposta); // Adiciona cada resposta correspondente à lista
         }
+    }
+
+    // Verifica se alguma resposta foi encontrada
+    if (respostasEncontradas.length > 0) {
+        return respostasEncontradas.join('\n'); // Retorna as respostas concatenadas com quebras de linha
     }
 
     return null;  // Retorna null se nenhuma correspondência for encontrada
