@@ -57,14 +57,13 @@ const respostasPredefinidas = [
     { pergunta: /comidas|bebidas/i, resposta: "Não é permitido entrar com bebidas, caixas de som ou alimentos de fora." },
     { pergunta: /aniversário/i, resposta: "Pode comemorar aniversário! É permitido levar bolo e ornamentação, mas doces e salgados não." },
     { pergunta: /excursão|excursões/i, resposta: "Sim, aceitamos excursões! Para agendar, é necessário consultar as datas e a quantidade de pessoas. Entre em contato com o gerente no número: 7399037182." },
-    { pergunta: /almoço|comida|refeições|café da manhã|café|alimentos|alimento|alimentação/i, resposta: "Temos restaurante com opções de buffet e à la carte. Digitando a palavra CARDÁPIO, você poderá ver o nosso cardápio digital. Lembrando que não é permitido a entrada de alimentos ou bebidas de fora" },
+    { pergunta: /almoço|comida|refeições|café da manhã|café|alimentos|alimento|alimentação|restaurante/i, resposta: "Temos restaurante com opções de buffet e à la carte. Digitando a palavra CARDÁPIO, você poderá ver o nosso cardápio digital. Lembrando que não é permitido a entrada de alimentos ou bebidas de fora" },
     { pergunta: /pagamento|formas de pagamento|cartão|pix/i, resposta: "Aceitamos pagamentos em cartão, Pix ou dinheiro. O pagamento é feito apenas de forma presencial." },
     { pergunta: /caixinha de som|música|som/i, resposta: "Não é permitido entrar com caixas de som ou qualquer outro dispositivo de som no parque." },
     { pergunta: /carro|transporte|ônibus|horário de transporte/i, resposta: "O parque não oferece serviço de transporte ou carro para levar os visitantes. Recomendamos verificar opções de transporte particulares ou ônibus da região." },
     { pergunta: /estadia|dormir|acomodação|hospedagem/i, resposta: "O parque não oferece acomodações para estadia. A cidade mais próxima com opções de hospedagem é Itamarati, recomendamos procurar por lá." },
     { pergunta: /professor|desconto para professor/i, resposta: "Não, não oferecemos descontos para professores." },
     { pergunta: /localização|onde fica|aonde fica|fica em que lugar|onde|aonde|qual a localidade|localidade|local/i, resposta: "Olá! Estamos localizados a 15 km de Itamaraty, sentido Gandu, na BR 101. A entrada fica à esquerda, tem um ponto de ônibus e 2 placas grandes do parque na entrada. Também estamos a 25 km de Gandu, sentido Itamaraty. A entrada fica a 800 metros depois da Fazenda Paineiras, na BR 101, à direita, com as mesmas 2 placas do parque. Você tem mais alguma dúvida? 😊" },
-    // Adicione mais perguntas e respostas conforme necessário
 ];
 
 const verificarDataFinalDeSemana = (mensagem) => {
