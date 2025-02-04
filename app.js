@@ -50,6 +50,11 @@ const respostasPredefinidas = [
   },
 
   {
+    pergunta: /cachorro/i,
+    resposta:
+      "Se o seu cachorro for de pequeno porte, ele é bem-vindo na Fazenda Park Nova Conquista! 🐕",
+  },
+  {
     pergunta: /oi|ola|bom dia|boa tarde|boa noite|opa|olá/i,
     resposta:
       "Olá, bem-vindo à Fazenda Park Nova Conquista! Como posso te ajudar hoje? 😊 Para uma comunicação mais ágil e eficiente, prefira enviar mensagens de texto em vez de áudios. Assim, podemos te atender mais rapidamente!",
