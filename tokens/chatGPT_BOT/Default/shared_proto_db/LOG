@@ -1,3 +1,2 @@
-2025/02/05-11:20:39.029 4390 Reusing MANIFEST C:\Users\caioi\Documents\Fazenda Bot\fazenda-park-bot\tokens\chatGPT_BOT\Default\shared_proto_db/MANIFEST-000001
-2025/02/05-11:20:39.031 4390 Recovering log #3
-2025/02/05-11:20:39.031 4390 Reusing old log C:\Users\caioi\Documents\Fazenda Bot\fazenda-park-bot\tokens\chatGPT_BOT\Default\shared_proto_db/000003.log 
+2025/02/05-11:26:32.236 4534 Creating DB C:\Users\caioi\Documents\Fazenda Bot\fazenda-park-bot\tokens\chatGPT_BOT\Default\shared_proto_db since it was missing.
+2025/02/05-11:26:32.279 4534 Reusing MANIFEST C:\Users\caioi\Documents\Fazenda Bot\fazenda-park-bot\tokens\chatGPT_BOT\Default\shared_proto_db/MANIFEST-000001
