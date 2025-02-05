@@ -240,7 +240,7 @@ const start = (client) => {
     let precisaEnviarOpcoesDesconto = false;
 
     // Verifica se a mensagem menciona localização
-    const palavrasLocalizacao = ["localização", "endereço", "onde fica", "aonde fica", "qual a localidade", "localidade", "local", "endereco", "qual cidade", "que cidade"];
+    const palavrasLocalizacao = ["localização", "endereço", "onde fica", "aonde fica", "qual a localidade", "localidade", "local", "endereco", "qual cidade", "que cidade", "abre que dia", "quais dias", "ques dias", "que dia funciona"];
     if (palavrasLocalizacao.some((palavra) => message.body.toLowerCase().includes(palavra))) {
       respostaFinal += "\n\n📍 *Nosso Endereço:*\nEstamos localizados a 15 km de Itamaraty, sentido Gandu, na BR 101. A entrada fica à esquerda, com um ponto de ônibus e 2 placas grandes do parque na entrada. Também estamos a 25 km de Gandu, sentido Itamaraty. A entrada fica a 800 metros depois da Fazenda Paineiras, na BR 101, à direita, com as mesmas 2 placas do parque.";
       precisaEnviarLocalizacao = true;
@@ -254,7 +254,7 @@ const start = (client) => {
     }
 
     // Verifica se a mensagem menciona desconto em grupo
-    const palavrasDesconto = ["desconto em grupo", "desconto pra grupo", "pacote", "excursão", "confra", "confraternização", "desconto"];
+    const palavrasDesconto = ["desconto em grupo", "desconto pra grupo", "pacote", "excursão", "confra", "confraternização", "desconto", "grupo", "grupos"];
     if (palavrasDesconto.some((palavra) => message.body.toLowerCase().includes(palavra))) {
       precisaEnviarOpcoesDesconto = true;
     }

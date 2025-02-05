@@ -1,15 +1,11 @@
-2025/02/04-10:08:46.279 4bec Reusing MANIFEST C:\Users\caioi\Documents\Fazenda Bot\fazenda-park-bot\tokens\chatGPT_BOT\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/02/04-10:08:46.279 4bec Recovering log #104
-2025/02/04-10:08:46.285 4bec Reusing old log C:\Users\caioi\Documents\Fazenda Bot\fazenda-park-bot\tokens\chatGPT_BOT\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000104.log 
-2025/02/04-10:08:46.285 4bec Delete type=2 #102
-2025/02/04-10:08:46.285 4bec Delete type=2 #105
-2025/02/04-10:08:47.516 5258 Level-0 table #109: started
-2025/02/04-10:08:47.523 5258 Level-0 table #109: 282214 bytes OK
-2025/02/04-10:08:47.525 5258 Delete type=0 #104
-2025/02/04-10:08:47.526 4bec Manual compaction at level-0 from '\x00*\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00+\x00\x00\x00' @ 0 : 0; will stop at (end)
-2025/02/04-10:08:48.392 594 Compacting 1@1 + 1@2 files
-2025/02/04-10:08:48.424 594 Generated table #110@1: 42867 keys, 1383083 bytes
-2025/02/04-10:08:48.424 594 Compacted 1@1 + 1@2 files => 1383083 bytes
-2025/02/04-10:08:48.425 594 compacted to: files[ 0 0 1 0 0 0 0 ]
-2025/02/04-10:08:48.425 594 Delete type=2 #106
-2025/02/04-10:08:48.425 594 Delete type=2 #109
+2025/02/04-10:11:27.028 fcc Reusing MANIFEST C:\Users\caioi\Documents\Fazenda Bot\fazenda-park-bot\tokens\chatGPT_BOT\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/02/04-10:11:27.028 fcc Recovering log #108
+2025/02/04-10:11:27.035 fcc Reusing old log C:\Users\caioi\Documents\Fazenda Bot\fazenda-park-bot\tokens\chatGPT_BOT\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000108.log 
+2025/02/04-10:11:28.374 13a4 Level-0 table #113: started
+2025/02/04-10:11:28.382 13a4 Level-0 table #113: 346119 bytes OK
+2025/02/04-10:11:28.384 13a4 Delete type=0 #108
+2025/02/04-10:11:28.384 fcc Manual compaction at level-0 from '\x00+\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00,\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/02/04-10:11:29.268 13a4 Compacting 1@1 + 1@2 files
+2025/02/04-10:11:29.297 13a4 Generated table #114@1: 44534 keys, 1434463 bytes
+2025/02/04-10:11:29.297 13a4 Compacted 1@1 + 1@2 files => 1434463 bytes
+2025/02/04-10:11:29.298 13a4 compacted to: files[ 0 0 1 0 0 0 0 ]
