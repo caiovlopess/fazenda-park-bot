@@ -44,7 +44,7 @@ Ainda não temos planos, fique por dentro que em breve vamos ter novidades!
 
 const respostasPredefinidas = [
   {
-    pergunta: /carnaval|carnaval/i,
+    pergunta: /carnaval/i,
     resposta:
       "Durante o Carnaval, o parque funcionará no sábado, domingo, segunda e terça-feira.",
   },
