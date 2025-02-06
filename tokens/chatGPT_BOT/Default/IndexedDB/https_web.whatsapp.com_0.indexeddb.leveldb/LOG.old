@@ -1,0 +1,14 @@
+2025/02/06-10:29:48.039 1a60 Reusing MANIFEST C:\Users\caioi\Documents\Fazenda Bot\fazenda-park-bot\tokens\chatGPT_BOT\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/02/06-10:29:48.039 1a60 Recovering log #93
+2025/02/06-10:29:48.040 1a60 Reusing old log C:\Users\caioi\Documents\Fazenda Bot\fazenda-park-bot\tokens\chatGPT_BOT\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000093.log 
+2025/02/06-10:29:48.040 1a60 Delete type=2 #92
+2025/02/06-10:29:49.396 46a8 Level-0 table #98: started
+2025/02/06-10:29:49.404 46a8 Level-0 table #98: 23511 bytes OK
+2025/02/06-10:29:49.406 46a8 Delete type=0 #93
+2025/02/06-10:29:49.406 306c Manual compaction at level-0 from '\x00+\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00,\x00\x00\x00' @ 0 : 0; will stop at '\x00+\x00\x00\x05' @ 72860 : 1
+2025/02/06-10:29:49.407 306c Compacting 1@0 + 1@1 files
+2025/02/06-10:29:49.432 306c Generated table #99@0: 36465 keys, 656277 bytes
+2025/02/06-10:29:49.432 306c Compacted 1@0 + 1@1 files => 656277 bytes
+2025/02/06-10:29:49.433 306c compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/02/06-10:29:49.434 306c Delete type=2 #98
+2025/02/06-10:29:49.437 1a60 Manual compaction at level-0 from '\x00+\x00\x00\x05' @ 72860 : 1 .. '\x00,\x00\x00\x00' @ 0 : 0; will stop at (end)

@@ -60,7 +60,7 @@ const respostasPredefinidas = [
       "Olá, bem-vindo à Fazenda Park Nova Conquista! Como posso te ajudar hoje? 😊 Para uma comunicação mais ágil e eficiente, prefira enviar mensagens de texto em vez de áudios. Assim, podemos te atender mais rapidamente!",
   },
   {
-    pergunta: /segunda|sabado|sábado|domingo|horas|hora|funcionamento|horário|dias/i,
+    pergunta: /segunda|parque funciona|sabado|sábado|domingo|horas|hora|funcionamento|horário|que dia|quais dias|funciona quando|que dia funciona|ques dia|diasperto|aberto|abre|fecha|fechado|hoje abre|amanhã abre|tá aberto|tá fechado|expediente|horas que abre|horas que fecha|horário de abrir|horário de fechar|que horas abre|que horas fecha|qual horário|qual hora abre|qual hora fecha|quando abre|quando fecha|hoje tem|sábado tem|domingo tem|final de semana tem|fim de semana tem|que dia tá aberto|quando tá funcionando|abre que dia|fecha que dia|tá funcionando|funciona até que horas|funciona que dia/i,
     resposta:
       "O parque funciona de 09:00 da manhã até 17:00 da tarde, apenas sábado e domingo.",
   },
@@ -240,7 +240,7 @@ const start = (client) => {
     let precisaEnviarOpcoesDesconto = false;
 
     // Verifica se a mensagem menciona localização
-    const palavrasLocalizacao = ["localização", "endereço", "onde fica", "aonde fica", "qual a localidade", "localidade", "local", "endereco", "qual cidade", "que cidade", "abre que dia", "quais dias", "ques dias", "que dia funciona"];
+    const palavrasLocalizacao = ["localização", "endereço", "onde fica", "aonde fica", "qual a localidade", "localidade", "local", "endereco", "qual cidade", "que cidade"];
     if (palavrasLocalizacao.some((palavra) => message.body.toLowerCase().includes(palavra))) {
       respostaFinal += "\n\n📍 *Nosso Endereço:*\nEstamos localizados a 15 km de Itamaraty, sentido Gandu, na BR 101. A entrada fica à esquerda, com um ponto de ônibus e 2 placas grandes do parque na entrada. Também estamos a 25 km de Gandu, sentido Itamaraty. A entrada fica a 800 metros depois da Fazenda Paineiras, na BR 101, à direita, com as mesmas 2 placas do parque.";
       precisaEnviarLocalizacao = true;
