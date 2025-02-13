@@ -1,3 +1,2 @@
-2025/02/13-10:32:24.404 55a8 Reusing MANIFEST C:\Users\caioi\Documents\Fazenda Bot\fazenda-park-bot\tokens\chatGPT_BOT\Default\Local Storage\leveldb/MANIFEST-000001
-2025/02/13-10:32:24.409 55a8 Recovering log #4
-2025/02/13-10:32:24.412 55a8 Reusing old log C:\Users\caioi\Documents\Fazenda Bot\fazenda-park-bot\tokens\chatGPT_BOT\Default\Local Storage\leveldb/000004.log 
+2025/02/13-10:42:13.897 d8c Creating DB C:\Users\caioi\Documents\Fazenda Bot\fazenda-park-bot\tokens\chatGPT_BOT\Default\Local Storage\leveldb since it was missing.
+2025/02/13-10:42:13.959 d8c Reusing MANIFEST C:\Users\caioi\Documents\Fazenda Bot\fazenda-park-bot\tokens\chatGPT_BOT\Default\Local Storage\leveldb/MANIFEST-000001
