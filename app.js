@@ -3,7 +3,7 @@ const axios = require("axios");
 const banco = require("./src/banco");
 const { parse, isWeekend } = require("date-fns");
 
-const treinamento = `Você é um atendente e está tirando dúvidas do cliente.
+/*const treinamento = `Você é um atendente e está tirando dúvidas do cliente.
 Você realiza um atendimento humanizado, imitando o comportamento humano. Lembre-se, você NÃO É UMA I.A.
 Não pergunte: "posso te ajudar com mais alguma coisa?" o tempo todo
 
@@ -40,7 +40,7 @@ A nossa reinauguração vai ocorrer no dia 11 de outubro, por conta de uma manun
 Ainda não temos planos, fique por dentro que em breve vamos ter novidades!
 
 
-`;
+`;*/
 
 const respostasPredefinidas = [
   {
@@ -57,7 +57,7 @@ const respostasPredefinidas = [
   {
     pergunta: /oi|ola|bom dia|boa tarde|boa noite|opa|olá/i,
     resposta:
-      "Olá, bem-vindo à Fazenda Park Nova Conquista! Como posso te ajudar hoje? 😊 Para uma comunicação mais ágil e eficiente, prefira enviar mensagens de texto em vez de áudios. Assim, podemos te atender mais rapidamente!",
+      "Olá, {nome}! Bem-vindo à Fazenda Park Nova Conquista! Como posso ajudar? Para um atendimento mais rápido, prefira mensagens de texto.",
   },
   {
     pergunta: /segunda|parque funciona|sabado|sábado|domingo|horas|hora|funcionamento|horário|que dia|quais dias|funciona quando|que dia funciona|ques dia|diasperto|aberto|abre|fecha|fechado|hoje abre|amanhã abre|tá aberto|tá fechado|expediente|horas que abre|horas que fecha|horário de abrir|horário de fechar|que horas abre|que horas fecha|qual horário|qual hora abre|qual hora fecha|quando abre|quando fecha|hoje tem|sábado tem|domingo tem|final de semana tem|fim de semana tem|que dia tá aberto|quando tá funcionando|abre que dia|fecha que dia|tá funcionando|funciona até que horas|funciona que dia/i,
@@ -180,26 +180,29 @@ const verificarDataFinalDeSemana = (mensagem) => {
   return null;
 };
 
-const verificarRespostaPredefinida = (mensagem) => {
+const verificarRespostaPredefinida = (mensagem, nomeUsuario) => {
   const mensagemMin = mensagem.toLowerCase();
-  const respostasEncontradas = [];
+  const respostasEncontradas = new Set(); // Usando Set para evitar repetições
 
   const respostaData = verificarDataFinalDeSemana(mensagem);
-  if (respostaData) respostasEncontradas.push(respostaData);
+  if (respostaData) respostasEncontradas.add(respostaData); // Adiciona resposta sem repetir
 
-  // Percorre a lista de respostas predefinidas
   for (const item of respostasPredefinidas) {
     if (item.pergunta.test(mensagemMin)) {
-      respostasEncontradas.push(item.resposta); // Adiciona cada resposta correspondente à lista
+      let resposta = item.resposta;
+
+      // Substitui o placeholder {nome} pelo nome real do usuário
+      if (resposta.includes("{nome}")) {
+        resposta = resposta.replace("{nome}", nomeUsuario);
+      }
+
+      // Só adiciona se a resposta ainda não foi adicionada ao Set
+      respostasEncontradas.add(resposta); // Set garante que não haverá duplicação
     }
   }
 
-  // Verifica se alguma resposta foi encontrada
-  if (respostasEncontradas.length > 0) {
-    return respostasEncontradas.join("\n"); // Retorna as respostas concatenadas com quebras de linha
-  }
-
-  return null; // Retorna null se nenhuma correspondência for encontrada
+  // Retorna a resposta única, ou null se não houver resposta
+  return respostasEncontradas.size > 0 ? Array.from(respostasEncontradas).join("\n") : null;
 };
 
 venom
@@ -226,15 +229,10 @@ const start = (client) => {
   client.onMessage(async (message) => {
     console.log("Mensagem recebida:", message);
 
-    const userCadastrado = banco.db.find((numero) => numero.num === message.from);
-    if (!userCadastrado) {
-      console.log("Cadastrando usuario");
-      banco.db.push({ num: message.from, historico: [] });
-    } else {
-      console.log("Usuário já cadastrado");
-    }
+    const primeiroNome = message.sender.pushname ? message.sender.pushname.split(" ")[0] : "Visitante";
 
-    let respostaFinal = verificarRespostaPredefinida(message.body);
+    let respostaFinal = verificarRespostaPredefinida(message.body, primeiroNome) || "";
+
     let precisaEnviarLocalizacao = false;
     let precisaEnviarCardapio = false;
     let precisaEnviarOpcoesDesconto = false;
@@ -242,14 +240,14 @@ const start = (client) => {
     // Verifica se a mensagem menciona localização
     const palavrasLocalizacao = ["localização", "endereço", "onde fica", "aonde fica", "qual a localidade", "localidade", "local", "endereco", "qual cidade", "que cidade"];
     if (palavrasLocalizacao.some((palavra) => message.body.toLowerCase().includes(palavra))) {
-      respostaFinal += "\n\n📍 *Nosso Endereço:*\nEstamos localizados a 15 km de Itamaraty, sentido Gandu, na BR 101. A entrada fica à esquerda, com um ponto de ônibus e 2 placas grandes do parque na entrada. Também estamos a 25 km de Gandu, sentido Itamaraty. A entrada fica a 800 metros depois da Fazenda Paineiras, na BR 101, à direita, com as mesmas 2 placas do parque.";
+      respostaFinal += "📍 *Nosso Endereço:*\nEstamos localizados a 15 km de Itamaraty, sentido Gandu, na BR 101. A entrada fica à esquerda, com um ponto de ônibus e 2 placas grandes do parque na entrada. Também estamos a 25 km de Gandu, sentido Itamaraty. A entrada fica a 800 metros depois da Fazenda Paineiras, na BR 101, à direita, com as mesmas 2 placas do parque.";
       precisaEnviarLocalizacao = true;
     }
 
     // Verifica se a mensagem menciona cardápio
     const palavrasCardapio = ["cardápio", "cardapio", "menu", "opções", "pratos", "comida", "o que tem para comer", "almoço", "comida", "refeições", "café da manhã", "café", "alimentos", "alimento", "alimentação", "restaurante"];
     if (palavrasCardapio.some((palavra) => message.body.toLowerCase().includes(palavra))) {
-      respostaFinal += "\n\n🍽️ *Nosso Cardápio:*\nAqui estão nossas opções deliciosas! Confira abaixo. 👇";
+      respostaFinal += "Temos restaurante com opções de buffet e à la carte. Lembrando que não é permitido a entrada de alimentos ou bebidas de fora! Confira abaixo. 👇";
       precisaEnviarCardapio = true;
     }
 
@@ -308,10 +306,11 @@ const start = (client) => {
       );
     }
 
-    const historico = banco.db.find((num) => num.num === message.from);
-    historico.historico.push("user: " + message.body);
-
-    axios
+    //const historico = banco.db.find((num) => num.num === message.from);
+    //historico.historico.push("user: " + message.body);
+  });
+};
+    /*axios
       .post(
         "https://api.openai.com/v1/chat/completions",
         {
@@ -332,6 +331,6 @@ const start = (client) => {
       })
       .catch((err) => {
         console.error("Erro na OpenAI:", err.response ? err.response.data : err);
-      });
-  });
-};
+      });*/
+//  });
+//};
