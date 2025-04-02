@@ -180,6 +180,28 @@ const verificarDataFinalDeSemana = (mensagem) => {
   return null;
 };
 
+const obterPrevisao = async (latitude, longitude) => {
+  try {
+    const apiKey = "761a579c8372cb6bbd38d01188618164"; // Substitua pela sua chave da OpenWeatherMap
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric&lang=pt_br`;
+
+    const response = await axios.get(url);
+    const dados = response.data;
+
+    return `Olá! ${dados.weather[0].main.toLowerCase().includes("rain") ? 
+  "Parece que pode chover." : `O tempo está ${dados.weather[0].description} e sem previsão de chuva.`} A temperatura é de ${dados.main.temp}°C, ${dados.main.temp > 30 ? "bem quente, então se hidrate!" : dados.main.temp < 20 ? "mais fresquinho, talvez um agasalho ajude." : "agradável para aproveitar o dia."} O vento está a ${dados.wind.speed} m/s, ${dados.wind.speed > 5 ? "com uma brisa mais forte." : "bem calmo."} Qualquer coisa, é só chamar!`;
+
+  } catch (error) {
+    console.error("Erro ao obter previsão do tempo:", error);
+    return "❌ Não foi possível obter a previsão do tempo no momento.";
+  }
+};
+const palavrasClima = [
+  "clima", "tempo", "previsão", "chuva", "calor", "frio", "sol", "nublado", "temperatura",
+  "chovendo", "esfriando", "esquentando", "quantos graus", "vai chover", "vai fazer sol",
+  "tá quente", "tá frio", "tá sol", "tempo hoje", "tempo agora", "vento", "sensação térmica"
+];
+
 const verificarRespostaPredefinida = (mensagem, nomeUsuario) => {
   const mensagemMin = mensagem.toLowerCase();
   const respostasEncontradas = new Set(); // Usando Set para evitar repetições
@@ -236,6 +258,14 @@ const start = (client) => {
     let precisaEnviarLocalizacao = false;
     let precisaEnviarCardapio = false;
     let precisaEnviarOpcoesDesconto = false;
+    let precisaEnviarPrevisao = false;
+
+    if (palavrasClima.some((palavra) => message.body.toLowerCase().includes(palavra))) {
+      const latitude = "-13.9306102";
+      const longitude = "-39.499918";
+      respostaFinal += await obterPrevisao(latitude, longitude);
+      precisaEnviarPrevisao = true;
+  }
 
     // Verifica se a mensagem menciona localização
     const palavrasLocalizacao = ["localização", "endereço", "onde fica", "aonde fica", "qual a localidade", "localidade", "local", "endereco", "qual cidade", "que cidade"];
@@ -266,8 +296,8 @@ const start = (client) => {
     if (precisaEnviarLocalizacao) {
       await client.sendLocation(
         message.from,
-        "-13.9303110",
-        "-39.4992540",
+        "-13.9306102",
+        "-39.499918",
         "Fazenda Park Nova Conquista"
       );
     }

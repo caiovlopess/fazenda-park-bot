@@ -1,0 +1,23 @@
+2025/04/02-12:57:18.900 3bd8 Reusing MANIFEST C:\Users\caioi\Documents\Fazenda Bot\fazenda-park-bot\tokens\chatGPT_BOT\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/04/02-12:57:18.901 3bd8 Recovering log #115
+2025/04/02-12:57:18.908 3bd8 Reusing old log C:\Users\caioi\Documents\Fazenda Bot\fazenda-park-bot\tokens\chatGPT_BOT\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000115.log 
+2025/04/02-12:57:20.324 57e4 Level-0 table #120: started
+2025/04/02-12:57:20.332 57e4 Level-0 table #120: 229894 bytes OK
+2025/04/02-12:57:20.337 57e4 Delete type=0 #115
+2025/04/02-12:57:20.338 3bd8 Manual compaction at level-0 from '\x000\x00\x00\x00' @ 72057594037927935 : 1 .. '\x001\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/04/02-12:57:21.309 57e4 Compacting 1@1 + 1@2 files
+2025/04/02-12:57:21.356 57e4 Generated table #121@1: 40618 keys, 1442124 bytes
+2025/04/02-12:57:21.356 57e4 Compacted 1@1 + 1@2 files => 1442124 bytes
+2025/04/02-12:57:21.358 57e4 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/04/02-12:57:21.358 57e4 Delete type=2 #117
+2025/04/02-12:57:21.358 57e4 Delete type=2 #120
+2025/04/02-13:02:22.310 57e4 Level-0 table #123: started
+2025/04/02-13:02:22.321 57e4 Level-0 table #123: 227610 bytes OK
+2025/04/02-13:02:22.322 57e4 Delete type=0 #119
+2025/04/02-13:02:22.323 3bd8 Manual compaction at level-0 from '\x001\x00\x00\x00' @ 72057594037927935 : 1 .. '\x002\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/04/02-13:02:27.913 4b5c Compacting 1@1 + 1@2 files
+2025/04/02-13:02:27.967 4b5c Generated table #124@1: 42607 keys, 1504386 bytes
+2025/04/02-13:02:27.967 4b5c Compacted 1@1 + 1@2 files => 1504386 bytes
+2025/04/02-13:02:27.969 4b5c compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/04/02-13:02:27.969 4b5c Delete type=2 #121
+2025/04/02-13:02:27.969 4b5c Delete type=2 #123
