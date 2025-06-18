@@ -1,3 +1,5 @@
-2025/04/02-14:17:58.196 33bc Reusing MANIFEST C:\Users\caioi\Documents\Fazenda Bot\fazenda-park-bot\tokens\chatGPT_BOT\Default\Service Worker\Database/MANIFEST-000001
-2025/04/02-14:17:58.209 33bc Recovering log #3
-2025/04/02-14:17:58.223 33bc Reusing old log C:\Users\caioi\Documents\Fazenda Bot\fazenda-park-bot\tokens\chatGPT_BOT\Default\Service Worker\Database/000003.log 
+2025/05/10-13:13:42.501 6de Recovering log #34
+2025/05/10-13:13:42.502 6de Level-0 table #37: started
+2025/05/10-13:13:42.508 6de Level-0 table #37: 795 bytes OK
+2025/05/10-13:13:42.520 6de Delete type=0 #34
+2025/05/10-13:13:42.520 6de Delete type=3 #32

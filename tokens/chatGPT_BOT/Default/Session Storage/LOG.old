@@ -1,3 +1,14 @@
-2025/04/02-12:57:18.561 4788 Reusing MANIFEST C:\Users\caioi\Documents\Fazenda Bot\fazenda-park-bot\tokens\chatGPT_BOT\Default\Session Storage/MANIFEST-000001
-2025/04/02-12:57:18.570 4788 Recovering log #3
-2025/04/02-12:57:18.577 4788 Reusing old log C:\Users\caioi\Documents\Fazenda Bot\fazenda-park-bot\tokens\chatGPT_BOT\Default\Session Storage/000003.log 
+2025/05/08-15:09:02.803 6fe Recovering log #36
+2025/05/08-15:09:02.806 6fe Level-0 table #38: started
+2025/05/08-15:09:02.812 6fe Level-0 table #38: 383 bytes OK
+2025/05/08-15:09:02.831 6fe Delete type=3 #34
+2025/05/08-15:09:02.831 6fe Delete type=0 #36
+2025/05/08-15:09:02.835 700 Compacting 4@0 + 1@1 files
+2025/05/08-15:09:02.857 700 Generated table #40@0: 5 keys, 311 bytes
+2025/05/08-15:09:02.857 700 Compacted 4@0 + 1@1 files => 311 bytes
+2025/05/08-15:09:02.863 700 compacted to: files[ 0 1 0 0 0 0 0 ]
+2025/05/08-15:09:02.865 700 Delete type=2 #29
+2025/05/08-15:09:02.867 700 Delete type=2 #35
+2025/05/08-15:09:02.867 700 Delete type=2 #38
+2025/05/08-15:09:02.867 700 Delete type=2 #32
+2025/05/08-15:09:02.867 700 Delete type=2 #27

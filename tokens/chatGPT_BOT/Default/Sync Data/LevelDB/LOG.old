@@ -1,3 +1,5 @@
-2025/04/02-12:57:18.506 3bd8 Reusing MANIFEST C:\Users\caioi\Documents\Fazenda Bot\fazenda-park-bot\tokens\chatGPT_BOT\Default\Sync Data\LevelDB/MANIFEST-000001
-2025/04/02-12:57:18.507 3bd8 Recovering log #3
-2025/04/02-12:57:18.508 3bd8 Reusing old log C:\Users\caioi\Documents\Fazenda Bot\fazenda-park-bot\tokens\chatGPT_BOT\Default\Sync Data\LevelDB/000003.log 
+2025/05/08-15:09:02.313 6e4 Recovering log #34
+2025/05/08-15:09:02.338 6e4 Level-0 table #36: started
+2025/05/08-15:09:02.340 6e4 Level-0 table #36: 0 bytes OK
+2025/05/08-15:09:02.354 6e4 Delete type=0 #34
+2025/05/08-15:09:02.356 6e4 Delete type=3 #32
