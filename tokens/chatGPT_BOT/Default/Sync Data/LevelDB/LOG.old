@@ -1,5 +1,5 @@
-2025/05/08-15:09:02.313 6e4 Recovering log #34
-2025/05/08-15:09:02.338 6e4 Level-0 table #36: started
-2025/05/08-15:09:02.340 6e4 Level-0 table #36: 0 bytes OK
-2025/05/08-15:09:02.354 6e4 Delete type=0 #34
-2025/05/08-15:09:02.356 6e4 Delete type=3 #32
+2025/05/10-13:13:42.463 6d6 Recovering log #37
+2025/05/10-13:13:42.481 6d6 Level-0 table #39: started
+2025/05/10-13:13:42.485 6d6 Level-0 table #39: 0 bytes OK
+2025/05/10-13:13:42.503 6d6 Delete type=0 #37
+2025/05/10-13:13:42.505 6d6 Delete type=3 #35

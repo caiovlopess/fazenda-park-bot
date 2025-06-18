@@ -1,3 +1,8 @@
-2025/05/10-13:13:42.497 6e0 Recovering log #32
-2025/05/10-13:13:42.512 6e0 Delete type=3 #31
-2025/05/10-13:13:42.512 6e0 Delete type=0 #32
+2025/06/18-13:55:41.336 e78 Reusing MANIFEST C:\Users\caioi\Documents\Fazenda Bot\fazenda-park-bot\tokens\chatGPT_BOT\Default\Site Characteristics Database/MANIFEST-000001
+2025/06/18-13:55:41.337 5e70 Compacting 3@0 + 0@1 files
+2025/06/18-13:55:41.346 5e70 Generated table #38@0: 1 keys, 162 bytes
+2025/06/18-13:55:41.346 5e70 Compacted 3@0 + 0@1 files => 162 bytes
+2025/06/18-13:55:41.356 5e70 compacted to: files[ 1 1 0 0 0 0 0 ]
+2025/06/18-13:55:41.356 5e70 Delete type=2 #16
+2025/06/18-13:55:41.356 5e70 Delete type=2 #18
+2025/06/18-13:55:41.357 5e70 Delete type=2 #29
