@@ -171,9 +171,9 @@ const verificarDataFinalDeSemana = (mensagem) => {
 
     // Verifica se a data é um final de semana (sábado ou domingo)
     if (isWeekend(data)) {
-      return "O parque vai abrir nessa data, pois cai em um final de semana! 😊";
+      return "Olá, estaremos abertos apenas aos domingos! 😊";
     } else {
-      return "O parque não abre durante a semana. Estamos abertos apenas aos sábados e domingos.";
+      return "O parque não abre durante a semana. Estamos abertos apenas aos domingos.";
     }
   }
 
