@@ -48,6 +48,11 @@ const respostasPredefinidas = [
     resposta:
       "Durante o Carnaval, o parque funcionará no sábado, domingo, segunda e terça-feira.",
   },
+  {
+    pergunta: /manuntenção|manutenção|manutencao|manutencão|manuntencao|manuntensão|manutençao|manutensao|manuntensao|manutencaoo|manutencã|manutençaoo|manutençaoes/i,
+    resposta:
+      "Oi! No momento nosso parque está fechado para descanso e manutenção 🛠️ Mas pode ficar tranquilo(a): estaremos de volta em breve com MUITA diversão! 🎉 Fique de olho no Instagram para saber a data de reabertura 📅✨",
+  },
 
   {
     pergunta: /cachorro/i,
@@ -57,12 +62,12 @@ const respostasPredefinidas = [
   {
     pergunta: /oi|ola|bom dia|boa tarde|boa noite|opa|olá/i,
     resposta:
-      "Olá, {nome}! Bem-vindo à Fazenda Park Nova Conquista! Como posso ajudar? Para um atendimento mais rápido, prefira mensagens de texto.",
+      "Olá, {nome}! Bem-vindo à Fazenda Park Nova Conquista! Como posso ajudar? Para um atendimento mais rápido, prefira mensagens de texto. No momento nosso parque está fechado para descanso e manutenção 🛠️, mas pode ficar tranquilo(a): em breve estaremos de volta com MUITA diversão 🎉. Fique de olho no nosso Instagram para saber a data de reabertura 📅✨",
   },
   {
     pergunta: /segunda|parque funciona|sabado|sábado|domingo|horas|hora|funcionamento|horário|que dia|quais dias|funciona quando|que dia funciona|ques dia|diasperto|aberto|abre|fecha|fechado|hoje abre|amanhã abre|tá aberto|tá fechado|expediente|horas que abre|horas que fecha|horário de abrir|horário de fechar|que horas abre|que horas fecha|qual horário|qual hora abre|qual hora fecha|quando abre|quando fecha|hoje tem|sábado tem|domingo tem|final de semana tem|fim de semana tem|que dia tá aberto|quando tá funcionando|abre que dia|fecha que dia|tá funcionando|funciona até que horas|funciona que dia/i,
     resposta:
-      "O parque funciona de 09:00 da manhã até 17:00 da tarde, apenas no domingo.",
+      "Olá, {nome}! Bem-vindo à Fazenda Park Nova Conquista! 🌳 No momento estamos fechados para descanso e manutenção 🛠️. Acompanhe nosso Instagram para novidades 📅✨",
   },
   {
     pergunta: /vitória|da conquista|vitoria da conquista|de conquista/i,
